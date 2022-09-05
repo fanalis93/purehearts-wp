@@ -1,0 +1,203 @@
+<?php
+// Hero widget here
+
+namespace Elementor;
+
+
+class HeroSliderThumbsWidget extends Widget_Base
+{
+
+
+    public function get_name()
+    {
+        return "hero_slider_thumbs_widget";
+    }
+
+    public function get_title()
+    {
+        return "Hero Slider Thumbs";
+    }
+
+    public function get_icon()
+    {
+        return "eicon-favorite";
+    }
+
+    public function get_categories()
+    {
+        return ['purehearts-widgets'];
+    }
+
+
+    //public function get_script_depends() {}
+
+    //public function get_style_depends() {}
+
+    protected function _register_controls()
+    {
+
+        $this->start_controls_section(
+            'heroslider_content_section',
+            [
+                'label' => __('Content', 'purehearts'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+
+        $repeater = new Repeater();
+
+
+        $repeater->add_control(
+            'slider_thumb_icon',
+            [
+                'label' => esc_html__('Thumb Icon', 'purehearts'),
+                'type' => Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'fas fa-circle',
+                    'library' => 'fa-solid',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        $repeater->add_control(
+            'slider_thumb_number',
+            [
+                'label' => esc_html__('Thumb Number', 'purehearts'),
+                'type' => Controls_Manager::NUMBER,
+                'default' => esc_html__(1, 'purehearts'),
+                'label_block' => true,
+            ]
+        );
+
+
+        $repeater->add_control(
+            'slider_thumb_top_text',
+            [
+                'label' => esc_html__('Top Text', 'purehearts'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Donate To', 'purehearts'),
+                'label_block' => true,
+            ]
+        );
+
+
+        $repeater->add_control(
+            'slider_thumb_title',
+            [
+                'label' => esc_html__('Title', 'purehearts'),
+                'type' => Controls_Manager::TEXT,
+
+                'label_block' => true,
+            ]
+        );
+
+
+        $repeater->add_control(
+            'slider_thumb_button_text',
+            [
+                'label' => esc_html__('Button Text', 'purehearts'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Sample Text', 'purehearts'),
+                'label_block' => true,
+            ]
+        );
+
+
+        $repeater->add_control(
+            'slider_thumb_button_url',
+            [
+                'label' => esc_html__('Button URL', 'purehearts'),
+                'type' => Controls_Manager::URL,
+                'label_block' => true,
+            ]
+        );
+
+
+        $repeater->add_control(
+            'slider_thumb_bg_image',
+            [
+                'label' => esc_html__('Sldier Thumb Background', 'purehearts'),
+                'type' => Controls_Manager::MEDIA,
+                'label_block' => true,
+            ]
+        );
+
+        $repeater->add_control(
+            'slider_thumb_side_image',
+            [
+                'label' => esc_html__('Sldier Side Image', 'purehearts'),
+                'type' => Controls_Manager::MEDIA,
+                'label_block' => true,
+            ]
+        );
+
+
+        $this->add_control(
+            'hero_section_sliders_thumbs',
+            [
+                'label' => esc_html__('Slider Thumbs', 'purehearts'),
+                'type' => Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'default' => [
+                    [
+                        'slider_thumb_title' => esc_html__('Title #1', 'purehearts'),
+
+                    ]
+                ],
+                'title_field' => '{{{ slider_thumb_title }}}',
+            ]
+        );
+
+
+        $this->end_controls_section();
+    }
+
+    protected function render()
+    {
+
+        $settings = $this->get_settings_for_display();
+
+        $hero_section_sliders_thumbs = $settings['hero_section_sliders_thumbs'];
+
+
+?>
+
+        <div class="banner-thumbs-carousel">
+            <!-- <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-10.png)"></div> -->
+            <div class="swiper-container banner-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <?php
+                        foreach ($hero_section_sliders_thumbs as $slider) {
+                        ?>
+                            <div class="single-item">
+                                <div class="icon-box">
+                                    <div class="icon"><i class="<?php echo esc_attr($slider['slider_thumb_icon']); ?>" aria-hidden="true"></i></div>
+                                    <span><?php echo $slider['slider_thumb_number']; ?></span>
+                                </div>
+                                <div class="text">
+                                    <span class="top-text"><?php echo $slider['slider_thumb_top_text']; ?></span>
+                                    <h3><?php echo $slider['slider_thumb_title']; ?></h3>
+                                    <a href="<?php echo $slider['slider_thumb_button_url']['url']; ?>"><?php echo $slider['slider_thumb_button_text']; ?></a>
+                                </div>
+                                <figure class="image-box">
+                                    <img src="<?php echo $slider['slider_thumb_side_image']['url']; ?>" alt="" />
+                                </figure>
+                            </div>
+
+                        <?php } ?>
+                        <!-- loop end -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+<?php
+
+    }
+}
+
+plugin::instance()->widgets_manager->register_widget_type(new HeroSliderThumbsWidget);
