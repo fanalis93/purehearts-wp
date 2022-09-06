@@ -233,34 +233,33 @@
     });
   }
 
-  // banner-thumbs-carousel
-  // if ($('.banner-thumbs').length) {
-  // 	var newsCarousel = new Swiper('.banner-thumbs', {
-  // 		loop: true,
-  // 		spaceBetween: 30,
-  // 		slidesPerView: 3,
-  // 		initialSlide: 1,
-  // 		freeMode: true,
-  // 		speed: 2400,
-  // 		observer: true,
-  // 		slideActiveClass: 'swiper-slide-active',
-  // 		autoplay: {
-  // 		    delay: 2500,
-  // 		},
-  // 		navigation: {
-  // 			nextEl: '.swiper-button-next',
-  // 			prevEl: '.swiper-button-prev',
-  // 		},
-  //         breakpoints: {
-  //             1600: {
-  //               slidesPerView: 2,
-  //             },
-  //             1200: {
-  //               slidesPerView: 1,
-  //             },
-  //         },
-  // 	});
-  // }
+  if ($(".banner-thumbs").length) {
+    var newsCarousel = new Swiper(".banner-thumbs", {
+      loop: true,
+      spaceBetween: 30,
+      slidesPerView: 3,
+      initialSlide: 1,
+      freeMode: true,
+      speed: 2400,
+      observer: true,
+      slideActiveClass: "swiper-slide-active",
+      autoplay: {
+        delay: 2500,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        1600: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  }
 
   // single-item-carousel
   if ($(".single-item-carousel").length) {

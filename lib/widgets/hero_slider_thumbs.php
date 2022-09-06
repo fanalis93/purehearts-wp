@@ -61,15 +61,15 @@ class HeroSliderThumbsWidget extends Widget_Base
             ]
         );
 
-        $repeater->add_control(
-            'slider_thumb_number',
-            [
-                'label' => esc_html__('Thumb Number', 'purehearts'),
-                'type' => Controls_Manager::NUMBER,
-                'default' => esc_html__(1, 'purehearts'),
-                'label_block' => true,
-            ]
-        );
+        // $repeater->add_control(
+        //     'slider_thumb_number',
+        //     [
+        //         'label' => esc_html__('Thumb Number', 'purehearts'),
+        //         'type' => Controls_Manager::NUMBER,
+        //         'default' => esc_html__(1, 'purehearts'),
+        //         'label_block' => true,
+        //     ]
+        // );
 
 
         $repeater->add_control(
@@ -115,14 +115,14 @@ class HeroSliderThumbsWidget extends Widget_Base
         );
 
 
-        $repeater->add_control(
-            'slider_thumb_bg_image',
-            [
-                'label' => esc_html__('Sldier Thumb Background', 'purehearts'),
-                'type' => Controls_Manager::MEDIA,
-                'label_block' => true,
-            ]
-        );
+        // $repeater->add_control(
+        //     'slider_thumb_bg_image',
+        //     [
+        //         'label' => esc_html__('Sldier Thumb Background', 'purehearts'),
+        //         'type' => Controls_Manager::MEDIA,
+        //         'label_block' => true,
+        //     ]
+        // );
 
         $repeater->add_control(
             'slider_thumb_side_image',
@@ -151,50 +151,77 @@ class HeroSliderThumbsWidget extends Widget_Base
         );
 
 
+        $this->add_control(
+            'slider_thumb_bg_image',
+            [
+                'label' => __('Image', 'purehearts'),
+                'type' => Controls_Manager::MEDIA,
+
+            ]
+        );
+
+
         $this->end_controls_section();
     }
 
     protected function render()
     {
-
+        $thumb_number = 1;
         $settings = $this->get_settings_for_display();
 
         $hero_section_sliders_thumbs = $settings['hero_section_sliders_thumbs'];
+        $contentimage = $settings['slider_thumb_bg_image']['url'];
 
 
 ?>
+        <section class="banner-section">
+            <div class="banner-thumbs-carousel">
+                <div class="pattern-layer" style="background-image: url(<?php echo $contentimage; ?>)"></div>
+                <div class="swiper-container banner-thumbs">
+                    <div class="swiper-wrapper">
 
-        <div class="banner-thumbs-carousel">
-            <!-- <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-10.png)"></div> -->
-            <div class="swiper-container banner-thumbs">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
                         <?php
                         foreach ($hero_section_sliders_thumbs as $slider) {
                         ?>
-                            <div class="single-item">
-                                <div class="icon-box">
-                                    <div class="icon"><i class="<?php echo esc_attr($slider['slider_thumb_icon']); ?>" aria-hidden="true"></i></div>
-                                    <span><?php echo $slider['slider_thumb_number']; ?></span>
+                            <div class="swiper-slide">
+                                <div class="single-item">
+                                    <div class="icon-box">
+                                        <div class="icon">
+                                            <?php Icons_Manager::render_icon($slider['slider_thumb_icon'], ['aria-hidden' => 'true']); ?>
+
+
+
+                                        </div>
+                                        <!-- <span></span> -->
+                                        <span><?php echo $thumb_number++; ?></span>
+                                    </div>
+                                    <div class="text">
+                                        <span class="top-text"><?php echo $slider['slider_thumb_top_text']; ?></span>
+                                        <h3><?php echo $slider['slider_thumb_title']; ?></h3>
+                                        <a href="<?php echo $slider['slider_thumb_button_url']['url']; ?>"><?php echo $slider['slider_thumb_button_text']; ?></a>
+                                    </div>
+                                    <figure class="image-box">
+                                        <img src="<?php echo $slider['slider_thumb_side_image']['url']; ?>" alt="" />
+                                    </figure>
                                 </div>
-                                <div class="text">
-                                    <span class="top-text"><?php echo $slider['slider_thumb_top_text']; ?></span>
-                                    <h3><?php echo $slider['slider_thumb_title']; ?></h3>
-                                    <a href="<?php echo $slider['slider_thumb_button_url']['url']; ?>"><?php echo $slider['slider_thumb_button_text']; ?></a>
-                                </div>
-                                <figure class="image-box">
-                                    <img src="<?php echo $slider['slider_thumb_side_image']['url']; ?>" alt="" />
-                                </figure>
                             </div>
 
                         <?php } ?>
-                        <!-- loop end -->
+
+
+                    </div>
+                    <div class="swiper-nav-button">
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-
+        </section>
 <?php
 
     }
