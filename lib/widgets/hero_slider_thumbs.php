@@ -20,7 +20,7 @@ class HeroSliderThumbsWidget extends Widget_Base
 
     public function get_icon()
     {
-        return "eicon-favorite";
+        return "eicon-gallery-group";
     }
 
     public function get_categories()

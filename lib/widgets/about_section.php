@@ -1,5 +1,5 @@
 <?php
-// Hero widget here
+// about widget here
 
 namespace Elementor;
 
@@ -37,9 +37,9 @@ class AboutSectionWidget extends Widget_Base
     {
 
         $this->start_controls_section(
-            'about_content_section_',
+            'about_content_section',
             [
-                'label' => __('Widget Content', 'purehearts'),
+                'label' => __('About Widget Content', 'purehearts'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
