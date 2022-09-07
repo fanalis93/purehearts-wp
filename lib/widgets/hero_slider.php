@@ -178,7 +178,7 @@ class HeroSliderWidget extends Widget_Base
 
 
                                 <div class="image-layer" style="background-image: url(<?php echo $slider['slider_bg_image']['url']; ?>);">
-                                    <!-- <img src="<?php echo $slider['slider_bg_image']['url']; ?>" alt=""> -->
+
                                 </div>
                                 <div class="auto-container">
                                     <div class="content-box">
@@ -201,8 +201,8 @@ class HeroSliderWidget extends Widget_Base
                     </div>
                     <div class="swiper-nav-button">
                         <!-- Add Arrows -->
-                        <div class="swiper-button-next"><i class="far fa-arrow-right"></i></div>
-                        <div class="swiper-button-prev"><i class="far fa-arrow-left"></i></div>
+                        <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
                     </div>
                 </div>
             </div>

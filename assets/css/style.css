@@ -3229,7 +3229,7 @@ div#mCSB_1_container {
 .urgent-case-section .outer-container {
   position: relative;
   width: 50%;
-  padding-right: 40px;
+  /* padding-right: 40px; */
 }
 
 .urgent-case-section .outer-container .inner-box {
@@ -3244,6 +3244,8 @@ div#mCSB_1_container {
   background-repeat: no-repeat;
   background-position: center;
   min-height: 720px;
+  /* float: left;
+  width: 50%; */
 }
 
 /* .urgent-case-section .outer-container .single-block:first-child {
@@ -3346,7 +3348,7 @@ div#mCSB_1_container {
   top: 0px;
   right: 0px;
   width: 100%;
-  padding: 60px 0px;
+  padding: 60px 60px;
 }
 
 .urgent-case-section .right-column .cs-countdown .count-col {
@@ -3796,9 +3798,11 @@ div#mCSB_1_container {
   -webkit-animation: circle 0.95s;
   animation: circle 0.95s;
 }
-
+.row.clearfix {
+  justify-content: flex-end;
+}
 .case-block-one .inner-box .lower-content {
-  position: relative;
+  /* position: relative; */
   display: block;
   padding: 0px 20px;
   background-color: #f4f1f0;

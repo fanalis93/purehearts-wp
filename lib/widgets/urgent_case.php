@@ -122,8 +122,7 @@ class UrgentCaseWidget extends Widget_Base
 
 ?>
         <!-- urgent-case-section -->
-        <div class="inner-box clearfix">
-            <div class="single-block" style="background-image: url(<?php echo $urgent_left_bg_image; ?>); 
+        <div class="single-block" style="background-image: url(<?php echo $urgent_left_bg_image; ?>); 
                     
                     <?php if ($image_top_bottom == 'yes') {
                         echo ' padding: 356px 20px 51px 40px;';
@@ -133,23 +132,21 @@ class UrgentCaseWidget extends Widget_Base
                     
                     
                     ">
-                <div class="text">
-                    <h3>
-                        <?php Icons_Manager::render_icon($urgent_left_title_icon, ['aria-hidden' => 'true']); ?>
-                        <?php echo $urgent_left_title_text ?>
-                    </h3>
-                    <p><?php echo $urgent_left_title_description ?></p>
-                    <ul class="list-style-one clearfix">
-                        <?php
-                        foreach ($lists as $list) {
-                        ?>
-                            <li><?php echo $list['urgent_left_list_text'] ?></li>
-                        <?php } ?>
-                    </ul>
-                    <a href="index.html">More Details</a>
-                </div>
+            <div class="text">
+                <h3>
+                    <?php Icons_Manager::render_icon($urgent_left_title_icon, ['aria-hidden' => 'true']); ?>
+                    <?php echo $urgent_left_title_text ?>
+                </h3>
+                <p><?php echo $urgent_left_title_description ?></p>
+                <ul class="list-style-one clearfix">
+                    <?php
+                    foreach ($lists as $list) {
+                    ?>
+                        <li><?php echo $list['urgent_left_list_text'] ?></li>
+                    <?php } ?>
+                </ul>
+                <a href="index.html">More Details</a>
             </div>
-        </div>
         </div>
 <?php
     }
