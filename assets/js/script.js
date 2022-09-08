@@ -270,8 +270,8 @@
       smartSpeed: 500,
       autoplay: 1000,
       navText: [
-        '<span class="far fa-arrow-left"></span>',
-        '<span class="far fa-arrow-right"></span>',
+        '<span class="fa-solid fa-arrow-left"></span>',
+        '<span class="fa-solid fa-arrow-right"></span>',
       ],
       responsive: {
         0: {
@@ -334,8 +334,8 @@
       smartSpeed: 500,
       autoplay: 1000,
       navText: [
-        '<span class="far fa-arrow-left"></span>',
-        '<span class="far fa-arrow-right"></span>',
+        '<span class="fa-solid fa-arrow-left"></span>',
+        '<span class="fa-solid fa-arrow-right"></span>',
       ],
       responsive: {
         0: {
@@ -366,7 +366,7 @@
       smartSpeed: 500,
       autoplay: 1000,
       navText: [
-        '<span class="far fa-arrow-left"></span>',
+        '<span class="fa-solid fa-arrow-left"></span>',
         '<span class="far fa-arrow-right"></span>',
       ],
       responsive: {

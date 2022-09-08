@@ -91,30 +91,30 @@ class CaseSectionWidget extends Widget_Base
 ?>
         <!-- <div class="auto-container">
             <div class="tabs-box"> -->
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-12 col-sm-12 title-column">
-                <div class="title-inner text-right">
-                    <div class="sec-title">
-                        <span class="top-text"><?php echo $left_top_text; ?></span>
-                        <h2><?php echo $left_top_title; ?></h2>
-                    </div>
-                    <div class="tab-btn-box">
-                        <ul class="tab-btns tab-buttons clearfix">
-                            <?php
-                            foreach ($case_list as $list) {
-                            ?>
-                                <li class="tab-btn" data-tab="#tab-1">
-                                    <h5><?php echo $list['left_bottom_list_text']; ?></h5>
-                                    <div class="icon">
-                                        <i class="fal fa-angle-left"></i>
-                                    </div>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div>
+        <!-- <div class="row clearfix"> -->
+        <div class="col-md-12 col-sm-12 title-column">
+            <div class="title-inner text-right">
+                <div class="sec-title">
+                    <span class="top-text"><?php echo $left_top_text; ?></span>
+                    <h2><?php echo $left_top_title; ?></h2>
+                </div>
+                <div class="tab-btn-box">
+                    <ul class="tab-btns tab-buttons clearfix">
+                        <?php
+                        foreach ($case_list as $list) {
+                        ?>
+                            <li class="tab-btn" data-tab="#tab-1">
+                                <h5><?php echo $list['left_bottom_list_text']; ?></h5>
+                                <div class="icon">
+                                    <i class="fal fa-angle-left"></i>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </div>
             </div>
         </div>
+        <!-- </div> -->
         <!-- </div>
         </div> -->
 
