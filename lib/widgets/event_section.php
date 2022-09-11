@@ -126,7 +126,7 @@ class Events extends Widget_Base
             [
                 'label' => esc_html__('Event Details', 'purehearts'),
                 'type' => Controls_Manager::REPEATER,
-                'fields' => $sponsor_repeater->get_controls(),
+                'fields' => $event_repeater->get_controls(),
                 'default' => [
                     [
                         'event_title' => esc_html__('Event Details', 'purehearts'),

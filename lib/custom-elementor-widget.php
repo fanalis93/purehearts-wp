@@ -16,3 +16,5 @@ require get_template_directory() . '/lib/widgets/pointer_cards.php';
 require get_template_directory() . '/lib/widgets/gallery.php';
 require get_template_directory() . '/lib/widgets/video_section.php';
 require get_template_directory() . '/lib/widgets/event_section.php';
+require get_template_directory() . '/lib/widgets/team_section.php';
+require get_template_directory() . '/lib/widgets/testimonials.php';
