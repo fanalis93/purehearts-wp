@@ -151,22 +151,27 @@ class DonateWidget extends Widget_Base
                                                 <?php
                                                 $args = array(
                                                     'category_name' => $term->name,
-                                                    'posts_per_page' => 5,
+                                                    'posts_per_page' => 2,
                                                     'order' => 'ASC',
                                                 );
 
-                                                $your_query = new WP_Query($args);
+                                                // $your_query = new WP_Query($args);
 
 
-                                                if ($your_query->have_posts()) :
-                                                    while ($your_query->have_posts()) : $your_query->the_post();
+                                                // if ($your_query->have_posts()) :
+                                                //     while ($your_query->have_posts()) : $your_query->the_post();
 
-                                                        echo the_post_thumbnail('post-thumbnails');
-                                                        the_title();
+                                                //         the_title();    
 
 
-                                                    endwhile;
-                                                endif;
+                                                //     endwhile;
+                                                // endif;
+
+
+
+                                                echo $term->term_id;
+
+
 
                                                 /* echo $term->term_id;
 
@@ -191,12 +196,6 @@ class DonateWidget extends Widget_Base
                                                     endwhile;
                                                 endif; */
 
-
-
-
-
-
-
                                                 ?>
 
 
@@ -207,8 +206,8 @@ class DonateWidget extends Widget_Base
                                                         </figure>
                                                         <div class="lower-content">
                                                             <div class="shape" style="
-                                background-image: url(assets/images/shape/shape-11.png);
-                              "></div>
+                                                            background-image: url(assets/images/shape/shape-11.png);
+                                                        "></div>
                                                             <div class="donate-amount clearfix">
                                                                 <div class="amount-box">
                                                                     <div class="icon-box">
@@ -255,12 +254,6 @@ class DonateWidget extends Widget_Base
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
-
-
-
                                             </div>
                                         </div>
 
