@@ -3,16 +3,16 @@
 
 namespace Elementor;
 
-class AboutBanner extends Widget_Base
+class BasicBanner extends Widget_Base
 {
     public function get_name()
     {
-        return "about_banner";
+        return "basic_banner";
     }
 
     public function get_title()
     {
-        return "About Banner Widget";
+        return "Basic Banner Widget";
     }
 
     public function get_icon()
@@ -28,9 +28,9 @@ class AboutBanner extends Widget_Base
     protected function _register_controls()
     {
         $this->start_controls_section(
-            'about_banner_content',
+            'Basic_banner_content',
             [
-                'label' => __('About Banner Widget Contents', 'purehearts'),
+                'label' => __('Basic Banner Widget Contents', 'purehearts'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -80,4 +80,4 @@ class AboutBanner extends Widget_Base
 
 
 
-plugin::instance()->widgets_manager->register_widget_type(new AboutBanner);
+plugin::instance()->widgets_manager->register_widget_type(new BasicBanner);

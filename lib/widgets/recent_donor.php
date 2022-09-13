@@ -35,7 +35,13 @@ class RecentDonor extends Widget_Base
             ]
         );
 
-
+        $this->add_control(
+            'section_bg_img',
+            [
+                'label' => __('Section Background Image', 'purehearts'),
+                'type' => Controls_Manager::MEDIA,
+            ]
+        );
         $this->add_control(
             'section_title',
             [
@@ -105,36 +111,40 @@ class RecentDonor extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $section_title = $settings['section_title'];
+        $section_bg_img = $settings['section_bg_img']['url'];
         $section_heading = $settings['section_heading'];
         $donor_list = $settings['donor_list'];
 
 ?>
-        <!-- recent-case-section -->
-        <div class="auto-container">
-            <div class="inner-box">
-                <div class="inner">
-                    <div class="sec-title centred light">
-                        <span class="top-text"><?php echo $section_title; ?></span>
-                        <h2>
-                            <?php echo $section_heading; ?>
-                        </h2>
-                    </div>
-                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                        <?php foreach ($donor_list as $donor) { ?>
-                            <div class="single-item">
-                                <figure class="image-box">
-                                    <img src="<?php echo $donor['donor_image']['url']; ?>" alt="" />
-                                </figure>
-                                <div class="text">
-                                    <h3><?php echo $donor['donor_name']; ?>, <span><?php echo $donor['donor_location']; ?></span></h3>
-                                    <h6>Donated $<?php echo $donor['donation_amount']; ?></h6>
+        <section class="recent-case-section">
+            <div class="bg-layer" style="background-image: url(assets/images/background/5.jpg)"></div>
+            <div class="pattern-layer" style="background-image: url(<?php echo $section_bg_img; ?>)"></div>
+            <div class="auto-container">
+                <div class="inner-box">
+                    <div class="inner">
+                        <div class="sec-title centred light">
+                            <span class="top-text"><?php echo $section_title; ?></span>
+                            <h2>
+                                <?php echo $section_heading; ?>
+                            </h2>
+                        </div>
+                        <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
+                            <?php foreach ($donor_list as $donor) { ?>
+                                <div class="single-item">
+                                    <figure class="image-box">
+                                        <img src="<?php echo $donor['donor_image']['url']; ?>" alt="" />
+                                    </figure>
+                                    <div class="text">
+                                        <h3><?php echo $donor['donor_name']; ?>, <span><?php echo $donor['donor_location']; ?></span></h3>
+                                        <h6>Donated $<?php echo $donor['donation_amount']; ?></h6>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- recent-case-section end -->
 
 <?php

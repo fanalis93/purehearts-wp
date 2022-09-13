@@ -817,6 +817,7 @@
 
   .urgent-case-section .outer-container .inner-box .single-block {
     width: 100%;
+    background-size: cover;
   }
 
   .urgent-case-section .right-column .cs-countdown .count-col {

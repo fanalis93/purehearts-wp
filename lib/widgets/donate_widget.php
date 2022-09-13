@@ -76,7 +76,7 @@ class DonateWidget extends Widget_Base
 
 ?>
 
-        <!-- case-section -->
+        <!-- donate-case-section -->
         <section class="case-section">
             <div class="auto-container">
                 <div class="tabs-box">
@@ -91,12 +91,7 @@ class DonateWidget extends Widget_Base
                                     <ul class="tab-btns tab-buttons clearfix">
 
 
-                                        <li class="tab-btn active-btn" data-tab="#tab-1">
-                                            <h5>All Categories</h5>
-                                            <div class="icon">
-                                                <i class="fal fa-angle-left"></i>
-                                            </div>
-                                        </li>
+
 
                                         <?php
 
@@ -113,9 +108,12 @@ class DonateWidget extends Widget_Base
                                         // Check if any term exists
                                         if (!empty($terms) && is_array($terms)) {
                                             // add links for each category
+                                            $y = 1;
                                             foreach ($terms as $term) { ?>
 
-                                                <li class="tab-btn" data-tab="#<?php echo $term->name; ?>">
+                                                <li class="tab-btn <?php if ($y == 1) {
+                                                                        echo "active-btn";
+                                                                    } ?>" data-tab="#<?php echo $term->name; ?>">
                                                     <h5> <?php echo $term->name; ?></h5>
                                                     <div class="icon">
                                                         <i class="fal fa-angle-left"></i>
@@ -124,6 +122,7 @@ class DonateWidget extends Widget_Base
 
 
                                         <?php
+                                                $y++;
                                             }
                                         }
                                         ?>
@@ -141,125 +140,127 @@ class DonateWidget extends Widget_Base
                                 <?php
                                 if (!empty($terms) && is_array($terms)) {
 
+                                    $i = 1;
+
                                     foreach ($terms as $term) { ?>
 
 
-                                        <div class="tab" id="<?php echo $term->name; ?>">
+                                        <div class="tab <?php if ($i == 1) {
+                                                            echo "active-tab";
+                                                        } ?>" id="<?php echo $term->name; ?>">
                                             <div class="three-item-carousel owl-carousel owl-theme owl-dots-none">
 
 
                                                 <?php
                                                 $args = array(
-                                                    'category_name' => $term->name,
-                                                    'posts_per_page' => 2,
-                                                    'order' => 'ASC',
-                                                );
-
-                                                // $your_query = new WP_Query($args);
-
-
-                                                // if ($your_query->have_posts()) :
-                                                //     while ($your_query->have_posts()) : $your_query->the_post();
-
-                                                //         the_title();    
-
-
-                                                //     endwhile;
-                                                // endif;
-
-
-
-                                                echo $term->term_id;
-
-
-
-                                                /* echo $term->term_id;
-
-
-                                                $args = array(
-                                                    'category_name' => $term->name,
+                                                    'post_type' => 'donation',
+                                                    'cat' => $term->id,
                                                     'posts_per_page' => 5,
                                                     'order' => 'ASC',
                                                 );
 
-                                                $your_query = new WP_Query($args);
+                                                // The Query
+                                                $the_query = new \WP_Query($args);
 
-                                                var_dump($your_query);
-
-                                                if ($your_query->have_posts()) :
-                                                    while ($your_query->have_posts()) : $your_query->the_post();
-
-                                                        echo get_the_post_title($your_query->the_post());
+                                                // The Loop
+                                                if ($the_query->have_posts()) {
 
 
 
-                                                    endwhile;
-                                                endif; */
+                                                    while ($the_query->have_posts()) {
+                                                        $the_query->the_post();
 
                                                 ?>
 
 
-                                                <div class="case-block-one">
-                                                    <div class="inner-box">
-                                                        <figure class="image-box">
-                                                            <img src="assets/images/case/case-1.jpg" alt="" />
-                                                        </figure>
-                                                        <div class="lower-content">
-                                                            <div class="shape" style="
+                                                        <div class="case-block-one ">
+                                                            <div class=" inner-box">
+                                                                <figure class="image-box">
+                                                                    <?php echo get_the_post_thumbnail(); ?>
+                                                                </figure>
+                                                                <div class="lower-content">
+                                                                    <div class="shape" style="
                                                             background-image: url(assets/images/shape/shape-11.png);
                                                         "></div>
-                                                            <div class="donate-amount clearfix">
-                                                                <div class="amount-box">
-                                                                    <div class="icon-box">
-                                                                        <i class="fas fa-dollar-sign"></i>
+                                                                    <div class="donate-amount clearfix">
+                                                                        <div class="amount-box">
+                                                                            <div class="icon-box">
+                                                                                <i class="fas fa-dollar-sign"></i>
+                                                                            </div>
+                                                                            <h5>chirity rised</h5>
+                                                                            <div class="price">
+                                                                                $<?php the_field('raised_amount'); ?> <span>/ $<?php the_field('charity_target_amount'); ?></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="percentage-box">
+                                                                            <div class="bar">
+                                                                                <div class="bar-inner count-bar" data-percent="53%"></div>
+                                                                            </div>
+                                                                            <div class="count-text">53%</div>
+                                                                        </div>
                                                                     </div>
-                                                                    <h5>Charity Raised <?php echo $term->name; ?></h5>
-                                                                    <div class="price">
-                                                                        $42,000 <span>/ $80,000</span>
+                                                                    <div class="inner">
+                                                                        <div class="text">
+                                                                            <div class="category">
+                                                                                <a href="donation-details.html"># <?php echo $term->name; ?></a>
+                                                                            </div>
+                                                                            <h3>
+                                                                                <a href="donation-details.html"><?php echo get_the_title(); ?></a>
+                                                                            </h3>
+                                                                            <p>
+                                                                                <?php echo wp_trim_words(get_the_content(), 10, '...'); ?>
+                                                                            </p>
+                                                                        </div>
+                                                                        <ul class="info-box clearfix">
+                                                                            <li>
+                                                                                <i class="far fa-calendar-alt"></i>
+                                                                                <h5>Days</h5>
+                                                                                <p><?php the_field('days'); ?> Days Left</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i class="fas fa-users"></i>
+                                                                                <h5><?php the_field('suppoters'); ?>+</h5>
+                                                                                <p>Suppoters</p>
+                                                                            </li>
+                                                                        </ul>
                                                                     </div>
                                                                 </div>
-                                                                <div class="percentage-box">
-                                                                    <div class="bar">
-                                                                        <div class="bar-inner count-bar" data-percent="53%"></div>
-                                                                    </div>
-                                                                    <div class="count-text">53%</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="inner">
-                                                                <div class="text">
-                                                                    <div class="category">
-                                                                        <a href="donation-details.html"># Health & Food</a>
-                                                                    </div>
-                                                                    <h3>
-                                                                        <a href="donation-details.html">Potable Water for Villages In Mozambique <?php echo $term->name; ?></a>
-                                                                    </h3>
-                                                                    <p>
-                                                                        Indignation and dislike men who are like most
-                                                                        beguiled demoralized.
-                                                                    </p>
-                                                                </div>
-                                                                <ul class="info-box clearfix">
-                                                                    <li>
-                                                                        <i class="far fa-calendar-alt"></i>
-                                                                        <h5>Days</h5>
-                                                                        <p>28 Days Left</p>
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fas fa-users"></i>
-                                                                        <h5>40+</h5>
-                                                                        <p>Suppoters</p>
-                                                                    </li>
-                                                                </ul>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+
+
+
+
+
+
+                                                <?php
+
+
+
+                                                    }
+                                                } else {
+                                                    // no posts found
+                                                }
+                                                /* Restore original Post Data */
+                                                wp_reset_postdata();
+
+
+
+
+
+
+
+                                                ?>
+
+
+
                                             </div>
                                         </div>
 
 
                                 <?php
 
+                                        $i++;
                                     }
                                 }
 
