@@ -27,3 +27,4 @@ require get_template_directory() . '/lib/widgets/about_us/facts_figures.php';
 require get_template_directory() . '/lib/widgets/faq.php';
 require get_template_directory() . '/lib/widgets/basic_banner.php';
 require get_template_directory() . '/lib/widgets/contact/contact_quicklinks.php';
+require get_template_directory() . '/lib/widgets/blog_widget.php';

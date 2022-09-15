@@ -3799,7 +3799,8 @@ div#mCSB_1_container {
   animation: circle 0.95s;
 }
 .row.clearfix {
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  justify-content: flex-end;
 }
 .case-block-one .inner-box .lower-content {
   /* position: relative; */

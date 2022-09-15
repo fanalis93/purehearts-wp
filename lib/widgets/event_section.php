@@ -113,29 +113,7 @@ class Events extends Widget_Base
         );
 
 
-        $event_repeater = new Repeater();
-        $event_repeater->add_control(
-            'event_title',
-            [
-                'label' => esc_html__('Event Title'),
-                'type' => Controls_Manager::TEXTAREA,
-            ]
-        );
-        $this->add_control(
-            'event_list',
-            [
-                'label' => esc_html__('Event Details', 'purehearts'),
-                'type' => Controls_Manager::REPEATER,
-                'fields' => $event_repeater->get_controls(),
-                'default' => [
-                    [
-                        'event_title' => esc_html__('Event Details', 'purehearts'),
 
-                    ]
-                ],
-                'title_field' => '{{{ event_title }}}',
-            ]
-        );
 
 
         $this->end_controls_section();
@@ -178,7 +156,7 @@ class Events extends Widget_Base
                                         <div class="sponsors-carousel owl-carousel owl-theme owl-dots-none">
                                             <?php foreach ($sponsor_list as $sponsor_list) { ?>
                                                 <figure class="sponsors-logo">
-                                                    <a href="index.html"><img src="<?php $sponsor_list['sponsor_logo']['url']; ?>" alt="" /></a>
+                                                    <a href="index.html"><img src="<?php echo $sponsor_list['sponsor_logo']['url']; ?>" alt="" /></a>
                                                 </figure>
                                             <?php } ?>
                                         </div>
@@ -193,14 +171,24 @@ class Events extends Widget_Base
                                                                                             echo 'display: none';
                                                                                         } ?>">
                             <div class="right-column">
-                                <?php foreach ($event_list as $event_list) { ?>
+
+                                <?php
+                                $args = (array(
+                                    'post_type' => 'event',
+                                    'showposts' => 3
+                                ));
+                                $the_query = new \WP_Query($args);
+                                ?>
+                                <?php while ($the_query->have_posts()) :
+                                    $the_query->the_post(); ?>
+
                                     <div class="events-block-one wow fadeInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="shape" style="
                                         background-image: url(assets/images/shape/shape-20.png);
                                         "></div>
                                             <figure class="image-box">
-                                                <img src="assets/images/events/events-1.jpg" alt="" />
+                                                <?php echo get_the_post_thumbnail(); ?>
                                                 <h3>31<span>Feb</span></h3>
                                             </figure>
                                             <div class="inner">
@@ -209,7 +197,7 @@ class Events extends Widget_Base
                                                     <li><i class="far fa-map"></i>Newyork</li>
                                                 </ul>
                                                 <h3>
-                                                    <a href="event-details.html"><?php echo $event_list['event_title']; ?> </a>
+                                                    <a href="event-details.html"><?php echo the_title(); ?></a>
                                                 </h3>
                                                 <div class="links">
                                                     <a href="event-details.html">More Details</a>
@@ -220,7 +208,48 @@ class Events extends Widget_Base
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+
+
+
+
+
+                                <?php
+                                endwhile; ?>
+
+
+
+
+
+
+
+
+
+                                <!-- <div class="events-block-one wow fadeInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <div class="shape" style="
+                                        background-image: url(assets/images/shape/shape-20.png);
+                                        "></div>
+                                        <figure class="image-box">
+                                            <img src="assets/images/events/events-1.jpg" alt="" />
+                                            <h3>31<span>Feb</span></h3>
+                                        </figure>
+                                        <div class="inner">
+                                            <ul class="info clearfix">
+                                                <li><i class="far fa-clock"></i>11.30 am</li>
+                                                <li><i class="far fa-map"></i>Newyork</li>
+                                            </ul>
+                                            <h3>
+                                                <a href="event-details.html">Royal Parks Half Marathon</a>
+                                            </h3>
+                                            <div class="links">
+                                                <a href="event-details.html">More Details</a>
+                                            </div>
+                                            <div class="price">
+                                                <h6>$180.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

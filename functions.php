@@ -29,3 +29,5 @@ require get_template_directory() . '/lib/elementor-settings.php';
 
 
 require_once('inc/donation_register.php');
+require_once('inc/blog_register.php');
+require_once('inc/event_register.php');

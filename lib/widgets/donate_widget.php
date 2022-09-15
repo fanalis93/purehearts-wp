@@ -187,7 +187,7 @@ class DonateWidget extends Widget_Base
                                                                             <div class="icon-box">
                                                                                 <i class="fas fa-dollar-sign"></i>
                                                                             </div>
-                                                                            <h5>chirity rised</h5>
+                                                                            <h5>charity raised</h5>
                                                                             <div class="price">
                                                                                 $<?php the_field('raised_amount'); ?> <span>/ $<?php the_field('charity_target_amount'); ?></span>
                                                                             </div>
