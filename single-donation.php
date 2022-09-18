@@ -36,8 +36,9 @@ get_header();
                 }
                 ?>
                 <div class="title">
+                    <?php
 
-
+                    ?>
                     <h6># Hunger & Nutrition</h6>
                     <h1><?php the_title(); ?></h1>
                 </div>
@@ -96,48 +97,12 @@ get_header();
                             <div class="content-one">
                                 <figure class="image-box"><?php echo get_the_post_thumbnail(); ?></figure>
                                 <div class="text">
+
                                     <h3>Project for Poor Rural Child</h3>
-                                    <p>Dharms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and on the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.</p>
+                                    <p><?php the_content(); ?></p>
                                 </div>
                             </div>
-                            <div class="content-two">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 video-column">
-                                        <div class="video-inner">
-                                            <figure class="image-box"><img src="assets/images/case/case-22.jpg" alt=""></figure>
-                                            <div class="video-box">
-                                                <div class="video-btn">
-                                                    <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="icon-play-arrow"></i></a>
-                                                    <span>Campaign Video</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 text-column">
-                                        <div class="text">
-                                            <p>There are many variations passages like lorem ipsums available but that majority.</p>
-                                            <ul class="list clearfix">
-                                                <li>
-                                                    <h4>Sponsor Meals</h4>
-                                                    <p>to grow strong and fight malnutrition</p>
-                                                </li>
-                                                <li>
-                                                    <h4>Food Material</h4>
-                                                    <p>Trouble that are bound to ensure</p>
-                                                </li>
-                                                <li>
-                                                    <h4>Donate Clothes</h4>
-                                                    <p>Being able to do what we like very best</p>
-                                                </li>
-                                                <li>
-                                                    <h4>Education Material</h4>
-                                                    <p>to build a better future for themselves</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="donate-content">
                                 <div class="title">
                                     <h3>Make Your Donation</h3>
@@ -246,121 +211,6 @@ get_header();
                                     </div>
                                 </form>
                             </div>
-                            <div class="content-three">
-                                <div class="text">
-                                    <h3>How Can You Contribute?</h3>
-                                    <p>You don’t have to donate money to make a difference, Here are some imaginative ways.</p>
-                                </div>
-                                <div class="inner-box">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                                            <div class="single-item">
-                                                <figure class="image-box"><img src="assets/images/case/case-23.jpg" alt=""></figure>
-                                                <div class="content-box">
-                                                    <div class="icon-box"><i class="icon-charity"></i></div>
-                                                    <h3>Volunteer</h3>
-                                                    <h6><a href="volunteer.html">Join as Volunteer</a></h6>
-                                                </div>
-                                                <div class="overlay-content">
-                                                    <p>He rejects pleasures secure other great pleasure or else endures.</p>
-                                                    <h6><a href="volunteer.html">Join as Volunteer</a></h6>
-                                                    <div class="icon-box"><i class="icon-charity"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                                            <div class="single-item">
-                                                <figure class="image-box"><img src="assets/images/case/case-24.jpg" alt=""></figure>
-                                                <div class="content-box">
-                                                    <div class="icon-box"><i class="icon-mall"></i></div>
-                                                    <h3>By Shopping</h3>
-                                                    <h6><a href="products.html">Our products</a></h6>
-                                                </div>
-                                                <div class="overlay-content">
-                                                    <p>He rejects pleasures secure other great pleasure or else endures.</p>
-                                                    <h6><a href="products.html">Our products</a></h6>
-                                                    <div class="icon-box"><i class="icon-mall"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12 single-column">
-                                            <div class="single-item">
-                                                <figure class="image-box"><img src="assets/images/case/case-25.jpg" alt=""></figure>
-                                                <div class="content-box">
-                                                    <div class="icon-box"><i class="icon-donation-3"></i></div>
-                                                    <h3>Raise Funds</h3>
-                                                    <h6><a href="contact.html">Get in touch</a></h6>
-                                                </div>
-                                                <div class="overlay-content">
-                                                    <p>He rejects pleasures secure other great pleasure or else endures.</p>
-                                                    <h6><a href="contact.html">Get in touch</a></h6>
-                                                    <div class="icon-box"><i class="icon-donation-3"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-four">
-                                <div class="text">
-                                    <h3>Our Recent Donars</h3>
-                                    <p>Charms of pleasure of the moment, so blinded by desire, that they cannot</p>
-                                </div>
-                                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
-                                    <div class="single-item">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="assets/images/case/case-26.jpg" alt=""></figure>
-                                            <span>Donated <br />$250</span>
-                                        </div>
-                                        <div class="lower-content">
-                                            <span>Donated <br />$250</span>
-                                            <div class="text-box">
-                                                <span class="designation">Los Angeles</span>
-                                                <h4>Rodha Thelma</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="assets/images/case/case-27.jpg" alt=""></figure>
-                                            <span>Donated <br />$100</span>
-                                        </div>
-                                        <div class="lower-content">
-                                            <span>Donated <br />$100</span>
-                                            <div class="text-box">
-                                                <span class="designation">Los Angeles</span>
-                                                <h4>Rodha Thelma</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="assets/images/case/case-28.jpg" alt=""></figure>
-                                            <span>Donated <br />$50</span>
-                                        </div>
-                                        <div class="lower-content">
-                                            <span>Donated <br />$50</span>
-                                            <div class="text-box">
-                                                <span class="designation">Los Angeles</span>
-                                                <h4>Rodha Thelma</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="assets/images/case/case-28.jpg" alt=""></figure>
-                                            <span>Donated <br />$500</span>
-                                        </div>
-                                        <div class="lower-content">
-                                            <span>Donated <br />$500</span>
-                                            <div class="text-box">
-                                                <span class="designation">Los Angeles</span>
-                                                <h4>Rodha Thelma</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -379,11 +229,33 @@ get_header();
                                 </div>
                                 <div class="widget-content">
                                     <ul class="category-list clearfix">
-                                        <li><a href="donation-details.html">CONTRIBUTIONS<span>06</span></a></li>
-                                        <li><a href="donation-details.html">Environment<span>08</span></a></li>
-                                        <li><a href="donation-details.html">Heath & Food<span>03</span></a></li>
-                                        <li><a href="donation-details.html">Treatment<span>14</span></a></li>
-                                        <li><a href="donation-details.html">National Day<span>12</span></a></li>
+                                        <?php
+                                        // Get the taxonomy's terms
+                                        $terms = get_terms(
+                                            array(
+                                                'taxonomy'   => 'donation-category',
+                                                'hide_empty' => true,
+                                            )
+                                        );
+                                        // Check if any term exists
+                                        if (!empty($terms) && is_array($terms)) {
+
+                                            foreach ($terms as $term) { ?>
+                                                <?php
+                                                $args = (array(
+                                                    'post_type' => 'donation',
+                                                    'cat' => $term->id,
+                                                ));
+                                                $query = new \WP_Query($args);
+                                                $count = $query->found_posts;
+                                                ?>
+                                                <li><a href="#"><?php echo $term->name; ?><span><?php echo $count; ?></span></a></li>
+
+                                        <?php
+
+                                            }
+                                        }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>

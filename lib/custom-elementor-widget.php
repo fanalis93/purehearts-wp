@@ -28,3 +28,8 @@ require get_template_directory() . '/lib/widgets/faq.php';
 require get_template_directory() . '/lib/widgets/basic_banner.php';
 require get_template_directory() . '/lib/widgets/contact/contact_quicklinks.php';
 require get_template_directory() . '/lib/widgets/blog_widget.php';
+require get_template_directory() . '/lib/widgets/single_donation_widgets/circular_video.php';
+require get_template_directory() . '/lib/widgets/single_donation_widgets/list_elements.php';
+require get_template_directory() . '/lib/widgets/single_donation_widgets/contribute.php';
+require get_template_directory() . '/lib/widgets/single_donation_widgets/small_gallery.php';
+require get_template_directory() . '/lib/widgets/single_donation_widgets/donation_main_body.php';
