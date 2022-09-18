@@ -249,7 +249,7 @@ get_header();
                                                 $query = new \WP_Query($args);
                                                 $count = $query->found_posts;
                                                 ?>
-                                                <li><a href="#"><?php echo $term->name; ?><span><?php echo $count; ?></span></a></li>
+                                                <li><a href="#"><?php echo $term->name; ?><span><?php echo $term->count; ?></span></a></li>
 
                                         <?php
 
