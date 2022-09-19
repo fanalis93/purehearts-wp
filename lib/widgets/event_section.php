@@ -189,12 +189,12 @@ class Events extends Widget_Base
                                         "></div>
                                             <figure class="image-box">
                                                 <?php echo get_the_post_thumbnail(); ?>
-                                                <h3>31<span>Feb</span></h3>
+                                                <h3><span><?php the_field('date'); ?></span></h3>
                                             </figure>
                                             <div class="inner">
                                                 <ul class="info clearfix">
-                                                    <li><i class="far fa-clock"></i>11.30 am</li>
-                                                    <li><i class="far fa-map"></i>Newyork</li>
+                                                    <li><i class="far fa-clock"></i><?php the_field('time'); ?></li>
+                                                    <li><i class="far fa-map"></i><?php the_field('location'); ?></li>
                                                 </ul>
                                                 <h3>
                                                     <a href="event-details.html"><?php echo the_title(); ?></a>
@@ -203,7 +203,7 @@ class Events extends Widget_Base
                                                     <a href="event-details.html">More Details</a>
                                                 </div>
                                                 <div class="price">
-                                                    <h6>$180.00</h6>
+                                                    <h6>$<?php the_field('registration_fee'); ?>.00</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,39 +217,6 @@ class Events extends Widget_Base
                                 endwhile; ?>
 
 
-
-
-
-
-
-
-
-                                <!-- <div class="events-block-one wow fadeInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                                    <div class="inner-box">
-                                        <div class="shape" style="
-                                        background-image: url(assets/images/shape/shape-20.png);
-                                        "></div>
-                                        <figure class="image-box">
-                                            <img src="assets/images/events/events-1.jpg" alt="" />
-                                            <h3>31<span>Feb</span></h3>
-                                        </figure>
-                                        <div class="inner">
-                                            <ul class="info clearfix">
-                                                <li><i class="far fa-clock"></i>11.30 am</li>
-                                                <li><i class="far fa-map"></i>Newyork</li>
-                                            </ul>
-                                            <h3>
-                                                <a href="event-details.html">Royal Parks Half Marathon</a>
-                                            </h3>
-                                            <div class="links">
-                                                <a href="event-details.html">More Details</a>
-                                            </div>
-                                            <div class="price">
-                                                <h6>$180.00</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>

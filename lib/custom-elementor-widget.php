@@ -33,3 +33,4 @@ require get_template_directory() . '/lib/widgets/single_donation_widgets/list_el
 require get_template_directory() . '/lib/widgets/single_donation_widgets/contribute.php';
 require get_template_directory() . '/lib/widgets/single_donation_widgets/small_gallery.php';
 require get_template_directory() . '/lib/widgets/single_donation_widgets/donation_main_body.php';
+require get_template_directory() . '/lib/widgets/single_blog_widgets/right_main.php';

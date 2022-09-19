@@ -12,34 +12,20 @@ get_header();
     <section class="page-title details-page" style="background-image: url(assets/images/background/12.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <?php
 
-
-
-                // Get the taxonomy's terms
-                $terms = get_terms(
-                    array(
-                        'taxonomy'   => 'donation-category',
-                        'hide_empty' => true,
-                    )
-                );
-
-                // Check if any term exists
-                if (!empty($terms) && is_array($terms)) {
-
-                    foreach ($terms as $term) { ?>
-                        <h5> <?php echo $term->name; ?></h5>
-
-                <?php
-
-                    }
-                }
-                ?>
                 <div class="title">
-                    <?php
 
-                    ?>
-                    <h6># Hunger & Nutrition</h6>
+                    <?php
+                    /* FIRST
+ * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
+ */
+                    $categories = get_the_terms($post->ID, 'donation-category');
+                    // now you can view your category in array:
+                    // using var_dump( $categories );
+                    // or you can take all with foreach:
+                    foreach ($categories as $category) {
+                        echo '<h6>#' . $category->name . '</h6>';
+                    } ?>
                     <h1><?php the_title(); ?></h1>
                 </div>
             </div>

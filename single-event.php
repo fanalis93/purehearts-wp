@@ -33,9 +33,9 @@ get_header();
                 <div class="upper-box centred">
                     <h2><?php the_title(); ?></h2>
                     <ul class="events-info clearfix">
-                        <li><i class="far fa-calendar"></i>31.03.2021</li>
-                        <li><i class="far fa-clock"></i>11.30 am</li>
-                        <li><i class="far fa-map"></i>Newyork</li>
+                        <li><i class="far fa-calendar"></i><?php the_field('date'); ?></li>
+                        <li><i class="far fa-clock"></i><?php the_field('time'); ?></li>
+                        <li><i class="far fa-map"></i><?php the_field('location'); ?></li>
                     </ul>
                     <figure class="image-box"><img src="<?php echo get_the_post_thumbnail(); ?>" alt=""></figure>
                 </div>
@@ -53,7 +53,7 @@ get_header();
                                 <div class="content-one">
                                     <?php the_content(); ?>
                                 </div>
-                                <div class="content-two">
+                                <!-- <div class="content-two">
                                     <h3>What will You Learn?</h3>
                                     <ul class="list clearfix">
                                         <li>How to use social media to reach local, national and international audiences</li>
@@ -62,11 +62,11 @@ get_header();
                                         <li>Takeaway training material</li>
                                         <li>Mentoring and troubleshooting and post-training support from Jason</li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <div class="lower-box clearfix">
                                     <div class="btn-box pull-left">
                                         <a href="event-details.html" class="theme-btn btn-one">Register</a>
-                                        <span>$180</span>
+                                        <span>$<?php the_field('registration_fee'); ?></span>
                                     </div>
                                     <div class="share-option pull-right">
                                         <h5>Share With Friends<a href="event-details.html"><i class="fas fa-share-alt"></i></a></h5>
