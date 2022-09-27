@@ -1,3 +1,6 @@
+h4 {
+  color: #03c0a8;
+}
 .error_div {
   display: flex;
   flex-direction: row;
@@ -8,4 +11,7 @@
 }
 .donor-remove-padding {
   padding-top: 0px !important;
+}
+.pure-material-textfield-outlined {
+  color: red;
 }

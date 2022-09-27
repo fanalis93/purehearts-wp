@@ -67,3 +67,18 @@ function create_my_event_taxonomy()
     );
 }
 add_action('init', 'create_my_event_taxonomy');
+
+function jk_wordcount_heading($heading)
+{
+    $heading = "Total Words";
+    return $heading;
+}
+add_filter('wordcount_heading', 'jk_wordcount_heading');
+
+
+function jk_wordcount_tag($tag)
+{
+    $tag = 'h4';
+    return $tag;
+}
+add_filter('wordcount_tag', 'jk_wordcount_tag');

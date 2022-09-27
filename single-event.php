@@ -15,11 +15,6 @@ get_header();
                 <div class="title">
                     <h1>Event Details</h1>
                 </div>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Events</li>
-                    <li>Event Details</li>
-                </ul>
             </div>
         </div>
     </section>
