@@ -16307,3 +16307,26 @@ div#mCSB_1_container {
   .select-box {
   min-height: 60px;
 }
+
+.blog_area {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.post_thumb {
+  margin-right: 2em;
+  width: fit-content;
+}
+.post_details {
+  width: fit-content;
+}
+.attachment-post-thumbnails.size-post-thumbnails.wp-post-image {
+  width: 200px;
+  height: auto;
+}
+.archive_title {
+}
+.archive_title h1 {
+  color: red;
+}

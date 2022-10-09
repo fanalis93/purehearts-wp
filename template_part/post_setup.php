@@ -4,11 +4,26 @@
 ?>
 
         <div class="blog_area">
-            <div class="post_thumb">
-                <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('post-thumbnails'); ?></a>
-            </div>
+            <?php if (has_post_thumbnail($post->ID)) { ?>
+                <div class="post_thumb">
+                    <a href="<?php the_permalink(); ?>"><?php
+                                                        global $post;
+                                                        $author_id = $post->post_author;
+                                                        echo the_post_thumbnail('post-thumbnails', 'thumbnail');
+
+                                                        echo
+                                                        get_the_author_meta('nicename', $author_id);
+                                                        ?></a>
+                </div>
+            <?php
+            } else {
+            ?>
+                <div class="post_thumb" style="display: none;"></div>
+            <?php
+            }
+            ?>
             <div class="post_details">
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                 <?php the_content(); ?>
             </div>
         </div>

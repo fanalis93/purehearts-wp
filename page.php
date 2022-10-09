@@ -13,7 +13,9 @@ get_header();
             <div class="col-md-9">
                 <!-- <h1>this</h1> -->
 
-                <?php get_template_part('template_part/post_setup');  ?>
+                <?php get_template_part('template_part/blog_setup');
+                ?>
+
             </div>
         </div>
     </div>

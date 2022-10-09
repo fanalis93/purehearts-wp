@@ -39,7 +39,7 @@ function donation_post_type_init()
         'rewrite'            => array('slug' => 'donation'),
         'capability_type'    => 'post',
         'has_archive'        => true,
-        'hierarchical'       => false,
+        'hierarchical'       => true,
         'menu_position'      => 20,
         'menu_icon'           => 'dashicons-sos',
         'supports'           => array('title', 'editor', 'author', 'thumbnail'),
@@ -53,7 +53,7 @@ add_action('init', 'donation_post_type_init');
 
 
 
-function tr_create_my_taxonomy()
+function pcp_create_my_taxonomy()
 {
 
     register_taxonomy(
@@ -66,4 +66,4 @@ function tr_create_my_taxonomy()
         )
     );
 }
-add_action('init', 'tr_create_my_taxonomy');
+add_action('init', 'pcp_create_my_taxonomy');

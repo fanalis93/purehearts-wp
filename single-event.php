@@ -111,7 +111,7 @@ get_header();
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
-                                            <figure class="image-box"><img src="assets/images/events/events-19.jpg" alt=""></figure>
+                                            <figure class="image-box"><img src="<?php echo plugins_url('assets/images/events/events-19.jpg', __FILE__); ?>" alt=""></figure>
                                             <span class="designation">Doctor</span>
                                             <h3>Herman Gordon</h3>
                                             <ul class="social-links clearfix">
