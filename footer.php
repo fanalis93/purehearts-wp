@@ -9,7 +9,8 @@
                 <div class="left-column pull-left">
                     <div class="logo-box">
                         <div class="shape" style="background-image: url(assets/images/shape/shape-1.png);"></div>
-                        <figure class="logo"><a href="index.html"><img src="assets/images/logo-3.png" alt=""></a></figure>
+                        <figure class="logo"><a href="index.html"><img src="assets/images/logo-3.png" alt=""></a>
+                        </figure>
                     </div>
                     <div class="text">
                         <h3><i class="icon-email-open-sketched-envelope"></i>Subscribe <br />Our Newsletter</h3>
@@ -20,7 +21,7 @@
                         <form action="https://st.ourhtmldemo.com/new/PureHearts/contact.html" method="post" class="subscribe-form">
                             <div class="form-group">
                                 <input type="email" name="email" placeholder="Your Email Address..." required="">
-                                <button type="submit">Subscribe Us</button>
+                                <button type="submit">Subscribe Us!</button>
                             </div>
                         </form>
                     </div>
@@ -50,7 +51,8 @@
                                 <h3>Partner With Us</h3>
                             </div>
                             <div class="text">
-                                <p>Prevents our being able to do we like best, every pleasures is every pain avoided.</p>
+                                <p>Prevents our being able to do we like best, every pleasures is every pain avoided.
+                                </p>
                                 <a href="index.html" class="theme-btn btn-one">Join With Us</a>
                             </div>
                         </div>
